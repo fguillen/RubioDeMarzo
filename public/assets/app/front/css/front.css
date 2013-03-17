@@ -1,0 +1,52 @@
+#wrapper {
+  width: 930px;
+  margin: 0 auto;
+}
+
+#header {
+  margin-top: 66px;
+  height: 104px;
+  overflow: hidden;
+}
+
+#menu {
+  height: 104px;
+  line-height: 20px;
+}
+
+#menu > ul > li {
+  float: left;
+  font-weight: bold;
+  width: 232px;
+  margin-bottom: 10px;
+}
+
+#menu > ul > li > ul > li {
+  float: left;
+  font-weight: normal;
+  width: 115px;
+  color: #aaa;
+}
+
+.left_column {
+  width: 220px;
+  float: left;
+}
+
+.rigth_column {
+  width: 710px;
+  float: right;
+}
+
+/* INDEX */
+.item {
+  width: 215px;
+  float: left;
+  margin-right: 23px;
+}
+
+.item:nth-child(4n+0) {
+  margin-right: 0px;
+}
+
+

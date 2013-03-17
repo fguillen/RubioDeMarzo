@@ -1,9 +1,8 @@
 <% title "Items" %>
 
-<ul>
-  <% @items.each do |item| %>
-    <li><%= link_to item.title, [:front, item] %></li>
-  <% end %>
-</ul>
-
-<%= will_paginate @items %>
+<% @items.each do |item| %>
+  <div class="item">
+    <%= image_tag item.pics.first.attach(:front) %>
+    <h1><%= link_to item.title, [:front, item] %></h1>
+  </div>
+<% end %>
