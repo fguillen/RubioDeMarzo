@@ -5,17 +5,18 @@ GIT
     style_palette (0.0.5)
 
 GIT
-  remote: git@github.com:fguillen/ruby_regex.git
-  revision: 62f520b3e7d4a1601a6bbdc1f77cd5c112e09158
-  specs:
-    ruby_regex (0.0.9)
-
-PATH
-  remote: /Users/fguillen/Develop/Ruby/LogBook
+  remote: git@github.com:fguillen/LogBook.git
+  revision: 4c3449a89395366e9780f7d1e102516ba8306341
   specs:
     log_book (0.0.3)
       acts-as-taggable-on
       rails (~> 3.0)
+
+GIT
+  remote: git@github.com:fguillen/ruby_regex.git
+  revision: 62f520b3e7d4a1601a6bbdc1f77cd5c112e09158
+  specs:
+    ruby_regex (0.0.9)
 
 GEM
   remote: https://rubygems.org/
