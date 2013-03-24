@@ -15,15 +15,6 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     assert_equal([item_1, item_2].ids, assigns(:items).ids)
   end
 
-  def test_show
-    item = FactoryGirl.create(:item)
-
-    get :show, :id => item
-
-    assert_template "admin/items/show"
-    assert_equal(item, assigns(:item))
-  end
-
   def test_new
     get :new
     assert_template "admin/items/new"
@@ -49,7 +40,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     )
 
     item = Item.last
-    assert_redirected_to [:admin, item]
+    assert_redirected_to edit_admin_item_path(item)
 
     assert_equal("Item Title", item.title)
     assert_equal("My **text**", item.text)
@@ -75,22 +66,33 @@ class Admin::ItemsControllerTest < ActionController::TestCase
   end
 
   def test_update_valid
+    category_1 = FactoryGirl.create(:category)
+    category_2 = FactoryGirl.create(:category)
+    category_3 = FactoryGirl.create(:category)
+
     item = FactoryGirl.create(:item)
+    item.categories << category_1
+    item.categories << category_2
+    item.reload
+
+    assert_equal([category_1, category_2].ids, item.categories.ids)
 
     put(
       :update,
       :id => item,
       :item => {
-        :title => "Other Title"
+        :title => "Other Title",
+        :category_ids => [category_1, category_3].ids
       }
     )
 
     item.reload
 
-    assert_redirected_to [:admin, item]
+    assert_redirected_to edit_admin_item_path(item)
     assert_not_nil(flash[:notice])
 
     assert_equal("Other Title", item.title)
+    assert_equal([category_1, category_3].ids, item.categories.ids)
   end
 
   def test_destroy

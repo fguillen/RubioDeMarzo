@@ -22,6 +22,27 @@
     </div>
   </div>
 
+  <fieldset>
+    <legend>Categories</legend>
+    <%= hidden_field_tag "item[category_ids][]" %>
+
+    <div class="control-group">
+      <div class="controls">
+        <% Category::SECTIONS.values.each do |section| %>
+          <h4><%= section %></h4>
+          <% Category.in_section(section).by_position.each do |category| %>
+            <%= label_tag "check_category_#{category.id}", :class => "checkbox" do %>
+              <%= check_box_tag "item[category_ids][]", category.id, @item.categories.include?(category), :id => "check_category_#{category.id}" %>
+              <%= category.name %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </fieldset>
+
+
+
   <div class="control-group">
     <div class="controls">
       <%= f.submit :class => "btn btn-primary" %>

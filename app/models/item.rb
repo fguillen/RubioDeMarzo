@@ -6,7 +6,9 @@ class Item < ActiveRecord::Base
   has_many :item_categories, :dependent => :destroy
   has_many :categories, :through => :item_categories
 
-  attr_accessible :title, :text, :position
+  accepts_nested_attributes_for :categories, :allow_destroy => true
+
+  attr_protected nil
 
   before_validation :initialize_position
 

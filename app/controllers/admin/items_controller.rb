@@ -1,12 +1,9 @@
 class Admin::ItemsController < Admin::AdminController
   before_filter :require_admin_user
+  before_filter :load_item, :only => [:edit, :update, :destroy]
 
   def index
     @items = Item.by_position
-  end
-
-  def show
-    @item = Item.find(params[:id])
   end
 
   def new
@@ -17,7 +14,7 @@ class Admin::ItemsController < Admin::AdminController
     @item = Item.new(params[:item])
     @item.log_book_historian = current_admin_user
     if @item.save
-      redirect_to [:admin, @item], :notice => "Successfully created Item."
+      redirect_to edit_admin_item_path(@item), :notice => "Successfully created Item."
     else
       flash.now[:alert] = "Some error trying to create item."
       render :action => 'new'
@@ -25,14 +22,11 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
-    @item.log_book_historian = current_admin_user
     if @item.update_attributes(params[:item])
-      redirect_to [:admin, @item], :notice  => "Successfully updated Item."
+      redirect_to edit_admin_item_path(@item), :notice  => "Successfully updated Item."
     else
       flash.now[:alert] = "Some error trying to update Item."
       render :action => 'edit'
@@ -40,7 +34,6 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.log_book_historian = current_admin_user
     @item.destroy
     redirect_to :admin_items, :notice => "Successfully destroyed Item."
@@ -51,5 +44,12 @@ class Admin::ItemsController < Admin::AdminController
       Item.update_all(["position=?", index], ["id=?", id])
     end
     render :json => { "status" => "ok" }
+  end
+
+  private
+
+  def load_item
+    @item = Item.find(params[:id])
+    @item.log_book_historian = current_admin_user
   end
 end

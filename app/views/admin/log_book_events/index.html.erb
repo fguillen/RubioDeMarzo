@@ -19,7 +19,17 @@
           <td><%= log_book_event.id %></td>
           <td><%= log_book_event.created_at.to_s(:datetimedb) %></td>
           <td><%= log_book_event.historian ? link_to(log_book_event.historian.id, [:admin, log_book_event.historian]) : "-" %></td>
-          <td><%= log_book_event.historizable ? link_to(log_book_event.historizable.id, [:admin, log_book_event.historizable]) : "-" %></td>
+          <td>
+            <% if log_book_event.historizable %>
+              <% if log_book_event.historizable.instance_of?(Item) %>
+                <%= link_to log_book_event.historizable.id, edit_admin_item_path(log_book_event.historizable) %>
+              <% else %>
+                <%= link_to log_book_event.historizable.id, [:admin, log_book_event.historizable] %>
+              <% end %>
+            <% else %>
+              "-"
+            <% end %>
+          </td>
           <td><%= render_labels log_book_event.tag_list, :tags %></td>
           <td><%= log_book_event.text.to_md %></td>
         </tr>

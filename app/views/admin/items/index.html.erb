@@ -9,8 +9,7 @@
         <th class="span1"></th>
         <th class="span1">Id</th>
         <th class="span7">Title</th>
-        <th class="span1">Position</th>
-        <th class="span2">Created At</th>
+        <th class="span3">Categories</th>
       </tr>
     </thead>
 
@@ -18,10 +17,9 @@
       <% @items.each do |item| %>
         <tr data-id="<%= item.id %>">
           <td class="span1 handle"><i class="icon-list"></i></td>
-          <td class="span1"><%= link_to item.id, [:admin, item] %></td>
+          <td class="span1"><%= link_to item.id, edit_admin_item_path(item) %></td>
           <td class="span7"><%= item.title %></td>
-          <td class="span1"><%= item.position %></td>
-          <td class="span2"><%= item.created_at.to_s(:datetimedb) %></td>
+          <td class="span3"><%= item.categories.map(&:name).join(", ") %></td>
         </tr>
       <% end %>
     </tbody>
