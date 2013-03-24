@@ -1,8 +1,10 @@
 <% title "Items" %>
 
-<% @items.each do |item| %>
-  <div class="item">
-    <%= image_tag item.pics.first.attach(:front) %>
-    <h1><%= link_to item.title, [:front, item] %></h1>
-  </div>
-<% end %>
+<div class="items">
+  <% @items.each do |item| %>
+    <div class="item">
+      <%= image_tag item.pics.by_position.first.attach(:front) %>
+      <h1><%= link_to item.title, [:front, item] %></h1>
+    </div>
+  <% end %>
+</div>

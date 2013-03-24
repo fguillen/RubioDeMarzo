@@ -12,6 +12,7 @@ class Pic < ActiveRecord::Base
 
   ATTACH_STYLES = {
     :front => "215x",
+    :front_big => "710x",
     :admin => "100x100>"
   }
 
@@ -34,7 +35,7 @@ class Pic < ActiveRecord::Base
   end
 
   def initialize_position
-    self.position ||= Pic.minimum(:position).to_i - 1
+    self.position ||= Pic.maximum(:position).to_i + 1
   end
 
   def to_json

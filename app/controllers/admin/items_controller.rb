@@ -2,7 +2,7 @@ class Admin::ItemsController < Admin::AdminController
   before_filter :require_admin_user
 
   def index
-    @items = Item.by_position.paginate(:page => params[:page], :per_page => 10)
+    @items = Item.by_position
   end
 
   def show

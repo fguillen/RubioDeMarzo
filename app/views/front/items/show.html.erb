@@ -1,9 +1,20 @@
-<% title "Item > #{@item.title}" %>
+<% title "Item | #{@item.title}" %>
 
-<%= @item.text.to_md %>
+<div id="item_show">
+  <div class="left_column">
+    <div class="text">
+      <%= @item.text.to_md %>
+    </div>
+  </div>
 
-<ul>
-  <% @item.pics.each do |pic| %>
-    <li><%= image_tag pic.attach(:front) %></li>
-  <% end %>
-</ul>
+  <div class="rigth_column">
+    <h1><%= @item.title %></h1>
+    <div class="pics">
+      <ul>
+        <% @item.pics.by_position.each do |pic| %>
+          <li><%= image_tag pic.attach(:front_big) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
