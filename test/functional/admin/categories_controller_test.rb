@@ -8,7 +8,7 @@ class Admin::CategoriesControllerTest < ActionController::TestCase
   def test_index
     category_1 = FactoryGirl.create(:category, :section => Category::SECTIONS[:work])
     category_2 = FactoryGirl.create(:category, :section => Category::SECTIONS[:work])
-    category_2 = FactoryGirl.create(:category, :section => Category::SECTIONS[:about])
+    category_3 = FactoryGirl.create(:category, :section => Category::SECTIONS[:about])
 
     get :index, :section => Category::SECTIONS[:work]
 

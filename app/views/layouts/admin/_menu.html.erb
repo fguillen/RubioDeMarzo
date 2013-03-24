@@ -23,8 +23,15 @@
             </ul>
           </li>
 
-          <li class="<%= admin_menu_class(:admin_users) %>"><%= link_to "AdminUsers", :admin_admin_users %></li>
-          <li class="<%= admin_menu_class(:log_book_events) %>"><%= link_to "LogBookEvents", :admin_log_book_events %></li>
+          <li class="dropdown <%= admin_menu_class(:admin) %>">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "AdminUsers", :admin_admin_users %></li>
+              <li><%= link_to "LogBookEvents", :admin_log_book_events %></li>
+            </ul>
+          </li>
+
+
         </ul>
 
       </div><!--/.nav-collapse -->

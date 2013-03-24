@@ -12,10 +12,9 @@ module Admin::AdminHelper
 
   def admin_menu_class(actual_menu_name)
     menus = {
-      :admin_users => ["/admin/admin_users.*"],
       :items => ["/admin/items.*", "/admin"],
       :categories => ["/admin/categories.*"],
-      :log_book_events => ["/admin/log_book_events"]
+      :admin => ["/admin/log_book_events", "/admin/admin_users.*"]
     }
 
     path = request.fullpath.gsub(/\?.*/, "")
