@@ -12,7 +12,7 @@
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><%= link_to "Items", :admin_items %></li>
+          <li class="<%= admin_menu_class(:items) %>"><%= link_to "Items", :admin_items %></li>
           <li class="<%= admin_menu_class(:admin_users) %>"><%= link_to "AdminUsers", :admin_admin_users %></li>
           <li class="<%= admin_menu_class(:log_book_events) %>"><%= link_to "LogBookEvents", :admin_log_book_events %></li>
         </ul>

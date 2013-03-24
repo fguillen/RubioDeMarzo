@@ -17,8 +17,8 @@
       <% @items.each do |item| %>
         <tr data-id="<%= item.id %>">
           <td class="span1 handle"><i class="icon-list"></i></td>
-          <td class="span1"><%= link_to item.id, edit_admin_item_path(item) %></td>
-          <td class="span7"><%= item.title %></td>
+          <td class="span1"><%= item.id %></td>
+          <td class="span7"><%= link_to item.title, edit_admin_item_path(item) %></td>
           <td class="span3"><%= item.categories.map(&:name).join(", ") %></td>
         </tr>
       <% end %>
