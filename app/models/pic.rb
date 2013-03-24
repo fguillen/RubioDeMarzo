@@ -34,6 +34,10 @@ class Pic < ActiveRecord::Base
     )
   end
 
+  def title
+    attach.original_filename.gsub(/\.[^\.]*$/, "")
+  end
+
   def initialize_position
     self.position ||= Pic.maximum(:position).to_i + 1
   end

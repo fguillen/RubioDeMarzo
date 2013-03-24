@@ -24,4 +24,9 @@ class PicTest < ActiveSupport::TestCase
 
     assert_equal([pic_2, pic_1].ids, Pic.by_position.ids)
   end
+
+  def test_title
+    pic = FactoryGirl.create(:pic, :attach => File.open(fixture("pic.jpg")))
+    assert_equal("pic", pic.title)
+  end
 end

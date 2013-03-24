@@ -20,7 +20,12 @@
     <div class="pics">
       <ul>
         <% @item.pics.by_position.each do |pic| %>
-          <li><%= image_tag pic.attach(:front_big) %></li>
+          <li>
+            <div class="pic">
+              <%= image_tag pic.attach(:front_big) %>
+              <p><%= pic.title %></p>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div>

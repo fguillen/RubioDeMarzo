@@ -19,7 +19,7 @@ def item_create
 
   [*1..3].sample.times do
     item.pics.create!(
-      :attach => File.open("#{Rails.root}/test/fixtures/pic.jpg")
+      :attach => File.open("#{Rails.root}/test/fixtures/pic_#{[*1..4].sample}.jpg")
     )
   end
 

@@ -116,6 +116,14 @@ a:hover {
   color: #aaa;
 }
 
+#item_show .pic p {
+  text-align: right;
+  color: #aaa;
+}
+
+#item_show .pic {
+  margin-bottom: 20px;
+}
 
 #item_show h3 {
   margin-top: 20px;
@@ -138,6 +146,7 @@ a:hover {
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
+  padding-bottom: 20px;
 }
 
 #items .item h2 {
