@@ -6,6 +6,11 @@ FactoryGirl.define do
     password_confirmation "pass"
   end
 
+  factory :category do
+    sequence(:name) { |n| "Category #{n}" }
+    section Category::SECTIONS.values.first
+  end
+
   factory :item do
     sequence(:title) { |n| "Item Title #{n}" }
     text "The text"

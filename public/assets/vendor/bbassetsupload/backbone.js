@@ -831,7 +831,7 @@
     // Internal method called every time a model in the set fires an event.
     // Sets need to update their indexes when models change ids. All other
     // events simply proxy through. "add" and "remove" events that originate
-    // in other collections are ignored.
+    // in other categories are ignored.
     _onModelEvent: function(event, model, collection, options) {
       if ((event == 'add' || event == 'remove') && collection != this) return;
       if (event == 'destroy') {

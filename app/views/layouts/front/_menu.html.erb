@@ -1,0 +1,13 @@
+<div id="menu">
+  <ul>
+    <% Category::SECTIONS.values.each do |section| %>
+      <li class="<%= section %>"><%= section %>
+        <ul>
+          <% Category.in_section(section).each do |category| %>
+            <li><%= link_to category.name, [:front, category] %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>

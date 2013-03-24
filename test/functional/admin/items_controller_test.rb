@@ -12,7 +12,7 @@ class Admin::ItemsControllerTest < ActionController::TestCase
     get :index
 
     assert_template "admin/items/index"
-    assert_equal([item_2, item_1].ids, assigns(:items).ids)
+    assert_equal([item_1, item_2].ids, assigns(:items).ids)
   end
 
   def test_show

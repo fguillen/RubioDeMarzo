@@ -6,10 +6,10 @@ class ItemTest < ActiveSupport::TestCase
   end
 
   def test_on_create_initialize_position
-    item_1 = FactoryGirl.create(:item, :position => 10)
+    item_1 = FactoryGirl.create(:item, :position => 100)
     item_2 = FactoryGirl.create(:item)
 
-    assert_equal(9, item_2.position)
+    assert_equal(101, item_2.position)
   end
 
   def test_scope_by_position

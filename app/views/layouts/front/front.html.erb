@@ -9,42 +9,14 @@
       <div id="header">
         <div class="left_column">
           <div id="logo">
-            rubiodemarzo
+            <%= link_to "rubiodemarzo", root_path %>
           </div>
         </div>
 
         <div class="rigth_column">
-          <div id="menu">
-            <ul>
-              <li>work
-                <ul>
-                  <li>book cover</li>
-                  <li>identity</li>
-                  <li>editorial</li>
-                  <li>web</li>
-                  <li>essay photo</li>
-                  <li>miscelanea</li>
-                  <li>new!</li>
-                </ul>
-              </li>
-
-              <li>projects
-                <ul>
-                  <li>escritoalapiz</li>
-                  <li>laosamoña</li>
-                  <li>deslab</li>
-                </ul>
-              </li>
-
-              <li>about
-                <ul>
-                  <li>profile</li>
-                  <li>contact</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+          <%= render "layouts/front/menu" %>
         </div>
+
       </div>
       <div id="content" class="container">
         <%= yield %>

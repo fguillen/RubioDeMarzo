@@ -3,6 +3,7 @@ RubioDeMarzo::Application.routes.draw do
 
   namespace :front do
     resources :pages, :only => [:show]
+    resources :categories, :only => [:show]
     resources :items, :only => [:index, :show]
   end
 

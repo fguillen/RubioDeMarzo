@@ -4,7 +4,15 @@
   <div class="left_column">
     <div class="text">
       <%= @item.text.to_md %>
+
+      <h3>Categories</h3>
+      <ul>
+        <% @item.categories.each do |category| %>
+          <li><%= link_to category.name, [:front, category] %></li>
+        <% end %>
+      </ul>
     </div>
+
   </div>
 
   <div class="rigth_column">

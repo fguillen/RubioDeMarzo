@@ -9,7 +9,7 @@ class Front::ItemsControllerTest < ActionController::TestCase
 
     assert :success
     assert_template "front/items/index"
-    assert_equal([item_2, item_1].ids, assigns(:items).ids)
+    assert_equal([item_1, item_2].ids, assigns(:items).ids)
   end
 
   def test_show

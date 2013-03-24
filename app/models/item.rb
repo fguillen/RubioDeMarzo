@@ -2,7 +2,9 @@ class Item < ActiveRecord::Base
   strip_attributes
   log_book
 
-  has_many :pics
+  has_many :pics, :dependent => :destroy
+  has_many :item_categories, :dependent => :destroy
+  has_many :categories, :through => :item_categories
 
   attr_accessible :title, :text, :position
 
@@ -15,7 +17,7 @@ class Item < ActiveRecord::Base
   scope :by_position, order("position asc")
 
   def initialize_position
-    self.position ||= Item.minimum(:position).to_i - 1
+    self.position ||= Item.maximum(:position).to_i + 1
   end
 
   def to_param
