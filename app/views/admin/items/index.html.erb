@@ -3,7 +3,7 @@
 <div id="items">
   <p><%= link_to "New Item", :new_admin_item, :class => "btn" %></p>
 
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover table-sortable">
     <thead>
       <tr>
         <th class="span1"></th>
@@ -16,10 +16,10 @@
     <tbody data-update-url="<%= reorder_admin_items_url %>">
       <% @items.each do |item| %>
         <tr data-id="<%= item.id %>">
-          <td class="span1 handle"><i class="icon-list"></i></td>
-          <td class="span1"><%= item.id %></td>
-          <td class="span7"><%= link_to item.title, edit_admin_item_path(item) %></td>
-          <td class="span3"><%= item.categories.map(&:name).join(", ") %></td>
+          <td class="handle"><i class="icon-list"></i></td>
+          <td><%= item.id %></td>
+          <td><%= link_to item.title, edit_admin_item_path(item) %></td>
+          <td><%= item.categories.map(&:name).join(", ") %></td>
         </tr>
       <% end %>
     </tbody>

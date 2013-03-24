@@ -1,10 +1,15 @@
-<div class="items">
+<div id="items">
   <% items.each do |item| %>
     <div class="item">
       <% if !item.pics.empty? %>
         <%= image_tag item.pics.by_position.first.attach(:front) %>
       <% end %>
-      <h1><%= link_to item.title, [:front, item] %></h1>
+      <h2><%= link_to item.title, [:front, item] %></h2>
+      <ul class="categories">
+        <% item.categories.each do |category| %>
+          <li><%= link_to category.name, [:front, category] %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 </div>

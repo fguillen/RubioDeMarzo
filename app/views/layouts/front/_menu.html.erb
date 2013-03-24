@@ -3,8 +3,8 @@
     <% Category::SECTIONS.values.each do |section| %>
       <li class="<%= section %>"><%= section %>
         <ul>
-          <% Category.in_section(section).each do |category| %>
-            <li><%= link_to category.name, [:front, category] %></li>
+          <% Category.in_section(section).by_position.each do |category| %>
+            <li class="<%= "active" if @category == category %>"><%= link_to category.name, [:front, category] %></li>
           <% end %>
         </ul>
       </li>

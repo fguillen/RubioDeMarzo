@@ -13,6 +13,16 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="<%= admin_menu_class(:items) %>"><%= link_to "Items", :admin_items %></li>
+
+          <li class="dropdown <%= admin_menu_class(:categories) %>">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <% Category::SECTIONS.values.each do |section| %>
+                <li><%= link_to section, admin_categories_path(:section => section) %></li>
+              <% end %>
+            </ul>
+          </li>
+
           <li class="<%= admin_menu_class(:admin_users) %>"><%= link_to "AdminUsers", :admin_admin_users %></li>
           <li class="<%= admin_menu_class(:log_book_events) %>"><%= link_to "LogBookEvents", :admin_log_book_events %></li>
         </ul>

@@ -16,7 +16,7 @@ a:hover {
 
 #wrapper {
   width: 930px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
 }
 
 #header {
@@ -55,6 +55,11 @@ a:hover {
 
 #menu a {
   color: #aaa;
+}
+
+#menu li.active a {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* MENU ABOUT */
@@ -120,7 +125,7 @@ a:hover {
   font-weight: bold;
 }
 
-.items {
+#items {
    -moz-column-count: 4;
    -moz-column-gap: 23px;
    -webkit-column-count: 4;
@@ -129,10 +134,32 @@ a:hover {
    column-gap: 23px;
  }
 
-.items .item {
+#items .item {
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
+}
+
+#items .item h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#items .item .categories li {
+  display: inline;
+}
+
+#items .item .categories li a:after {
+  content: ", ";
+}
+
+#items .item .categories li:last-child a:after {
+  content: "";
+}
+
+#items .item .categories a{
+  color: #aaa;
 }
 
 

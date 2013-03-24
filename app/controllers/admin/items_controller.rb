@@ -34,7 +34,6 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def destroy
-    @item.log_book_historian = current_admin_user
     @item.destroy
     redirect_to :admin_items, :notice => "Successfully destroyed Item."
   end

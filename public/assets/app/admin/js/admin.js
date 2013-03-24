@@ -15,13 +15,13 @@ $(function(){
     $("#loading").animate({ top: "-70" }, 100);
   });
 
-  $("#items table tbody").sortable({
+  $(".table-sortable tbody").sortable({
     axis: "y",
     handle: ".handle",
     update: function(){
       $.post(
         $(this).data("update-url"),
-        { ids: _.map($("#items table tbody").find("tr"), function(element) { return $(element).attr("data-id"); } ) }
+        { ids: _.map($(".table-sortable tbody").find("tr"), function(element) { return $(element).attr("data-id"); } ) }
       )
     },
     helper: function(e, tr){

@@ -1,0 +1,10 @@
+<% title "Edit Category | #{@category.name}" %>
+
+<div id="category_form">
+  <%= render "form" %>
+
+  <br /><br />
+  <hr />
+  <%= link_to "Delete this Category", [:admin, @category], :method => :delete, :confirm => "Are you sure?, the Items will remain, don't worry about them", :class => "btn btn-danger" %>
+</div>
+

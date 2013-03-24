@@ -1,0 +1,27 @@
+<% title "Categories | #{params[:section]}" %>
+
+<div id="categories">
+  <p><%= link_to "New Category", :new_admin_category, :class => "btn" %></p>
+
+  <table class="table table-striped table-hover table-sortable">
+    <thead>
+      <tr>
+        <th class="span1"></th>
+        <th class="span1">Id</th>
+        <th class="span7">Name</th>
+        <th class="span3">Num Items</th>
+      </tr>
+    </thead>
+
+    <tbody data-update-url="<%= reorder_admin_categories_url %>">
+      <% @categories.each do |category| %>
+        <tr data-id="<%= category.id %>">
+          <td class="handle"><i class="icon-list"></i></td>
+          <td><%= category.id %></td>
+          <td><%= link_to category.name, edit_admin_category_path(category) %></td>
+          <td><%= category.items.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

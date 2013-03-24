@@ -14,6 +14,7 @@ module Admin::AdminHelper
     menus = {
       :admin_users => ["/admin/admin_users.*"],
       :items => ["/admin/items.*", "/admin"],
+      :categories => ["/admin/categories.*"],
       :log_book_events => ["/admin/log_book_events"]
     }
 

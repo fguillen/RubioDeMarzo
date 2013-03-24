@@ -23,4 +23,8 @@ class Category < ActiveRecord::Base
   def initialize_position
     self.position ||= Category.maximum(:position).to_i + 1
   end
+
+  def to_param
+    "#{id}-#{name.to_url}"
+  end
 end

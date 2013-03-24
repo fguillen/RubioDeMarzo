@@ -1,3 +1,7 @@
+#wrapper.basic {
+  margin-top: 40px;
+}
+
 #loading {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -23,4 +27,8 @@
 
 #grettings #user-name {
   text-align: right;
+}
+
+.table-sortable .handle {
+  cursor: move;
 }
