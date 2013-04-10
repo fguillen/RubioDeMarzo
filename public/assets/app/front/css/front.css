@@ -69,7 +69,7 @@ a:hover {
 
 /* MENU ABOUT */
 #menu > ul > li.about {
-  background-image: url("/assets/app/front/img/about_logo.jpg");
+  background-image: url("/assets/app/front/img/about_logo.png");
   background-repeat: no-repeat;
   background-position: 20px 0px;
 
