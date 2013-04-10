@@ -35,7 +35,8 @@ class Pic < ActiveRecord::Base
   end
 
   def title
-    attach.original_filename.gsub(/\.[^\.]*$/, "")
+    return nil if attach.original_filename =~ /^_/
+    return attach.original_filename.gsub(/\.[^\.]*$/, "")
   end
 
   def initialize_position

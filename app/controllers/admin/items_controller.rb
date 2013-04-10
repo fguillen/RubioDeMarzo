@@ -12,6 +12,7 @@ class Admin::ItemsController < Admin::AdminController
 
   def create
     @item = Item.new(params[:item])
+
     @item.log_book_historian = current_admin_user
     if @item.save
       redirect_to edit_admin_item_path(@item), :notice => "Successfully created Item."

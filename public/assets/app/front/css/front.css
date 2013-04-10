@@ -1,4 +1,3 @@
-/* FONTS */
 body {
   font-family: "Lato", sans-serif;
   font-size: 12px;
@@ -27,6 +26,7 @@ a:hover {
 }
 
 #logo {
+  font-family: "Helvetica", sans-serif;
   font-size: 30px;
   font-weight: bold;
 }
@@ -39,9 +39,13 @@ a:hover {
   line-height: 20px;
 }
 
+#menu .title {
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+}
+
 #menu > ul > li {
   float: left;
-  font-weight: bold;
   width: 232px;
   margin-bottom: 10px;
   height: 104px;
@@ -49,7 +53,6 @@ a:hover {
 
 #menu > ul > li > ul > li {
   float: left;
-  font-weight: normal;
   width: 115px;
 }
 
@@ -61,6 +64,8 @@ a:hover {
   font-weight: bold;
   text-decoration: underline;
 }
+
+
 
 /* MENU ABOUT */
 #menu > ul > li.about {
@@ -116,6 +121,15 @@ a:hover {
   color: #aaa;
 }
 
+#item_show .text p a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#item_show .text p {
+  margin-bottom: 1em;
+}
+
 #item_show .pic p {
   text-align: right;
   color: #aaa;
@@ -129,7 +143,7 @@ a:hover {
   margin-top: 20px;
   color: black;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 }
 
