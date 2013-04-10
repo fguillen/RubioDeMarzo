@@ -1,10 +1,14 @@
 <div id="items">
   <% items.each do |item| %>
     <div class="item">
-      <% if !item.pics.empty? %>
-        <%= image_tag item.pics.by_position.first.attach(:front) %>
+      <%= link_to [:front, item] do %>
+        <div class="info">
+          <% if !item.pics.empty? %>
+            <%= image_tag item.pics.by_position.first.attach(:front) %>
+          <% end %>
+          <h2><%= item.title %></h2>
+        </div>
       <% end %>
-      <h2><%= link_to item.title, [:front, item] %></h2>
       <ul class="categories">
         <% item.categories.each do |category| %>
           <li><%= link_to category.name, [:front, category] %></li>
