@@ -31,5 +31,8 @@ class PicTest < ActiveSupport::TestCase
 
     pic = FactoryGirl.create(:pic, :attach => File.open(fixture("_pic.jpg")))
     assert_equal(nil, pic.title)
+
+    pic = FactoryGirl.create(:pic, :attach => File.open(fixture("Pic With Spaces.jpg")))
+    assert_equal("Pic With Spaces", pic.title)
   end
 end

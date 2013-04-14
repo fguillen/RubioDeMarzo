@@ -13,7 +13,7 @@ class Pic < ActiveRecord::Base
   ATTACH_STYLES = {
     :front => "215x",
     :front_big => "710x",
-    :admin => "100x100>"
+    :admin => "303x203#"
   }
 
   # TODO: ugly! the point is that in test we don't use S3 so it needs another config
@@ -35,8 +35,10 @@ class Pic < ActiveRecord::Base
   end
 
   def title
-    return nil if attach.original_filename =~ /^_/
-    return attach.original_filename.gsub(/\.[^\.]*$/, "")
+    filename = File.basename(attach.original_filename, ".*")
+
+    return nil if filename =~ /^_/
+    return filename.gsub("_", " ")
   end
 
   def initialize_position
