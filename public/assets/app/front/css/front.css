@@ -26,9 +26,11 @@ a:hover {
 }
 
 #logo {
-  font-family: "Helvetica", sans-serif;
-  font-size: 30px;
-  font-weight: bold;
+  width: 187px;
+  height: 27px;
+  background-image: url("/assets/app/front/img/logo.png");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
 }
 
 #logo a:hover {
@@ -40,7 +42,7 @@ a:hover {
 }
 
 #menu .title {
-  font-family: "Helvetica", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
 
