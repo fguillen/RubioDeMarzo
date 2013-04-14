@@ -132,6 +132,14 @@ a:hover {
   margin-bottom: 1em;
 }
 
+#item_show .text p strong {
+  font-weight: bold;
+}
+
+#item_show .text p em {
+  font-style:italic
+}
+
 #item_show .pic p {
   text-align: right;
   color: #aaa;
