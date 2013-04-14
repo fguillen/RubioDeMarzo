@@ -25,7 +25,8 @@ a:hover {
   overflow: hidden;
 }
 
-#logo {
+#logo a {
+  display: block;
   width: 187px;
   height: 27px;
   background-image: url("/assets/app/front/img/logo.png");
