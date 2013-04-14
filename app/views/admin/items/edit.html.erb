@@ -5,6 +5,7 @@
 
   <br /><br />
   <hr />
+  <%= link_to "See this item as an User", [:front, @item] %> |
   <%= link_to "Delete this Item completely", [:admin, @item], :method => :delete, :confirm => "Are you sure?", :class => "btn btn-danger" %>
 </div>
 
