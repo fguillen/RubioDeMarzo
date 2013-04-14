@@ -18,4 +18,19 @@ class ItemTest < ActiveSupport::TestCase
 
     assert_equal([item_2, item_1].ids, Item.by_position.ids)
   end
+
+  def test_create_with_categories
+    category = FactoryGirl.create(:category)
+
+    item =
+      Item.create!(
+        :title => "Title",
+        :text => "Text",
+        :category_ids => [category.id]
+      )
+
+    item.reload
+    assert_equal(1, item.categories.count)
+    assert_equal(category, item.categories.first)
+  end
 end
