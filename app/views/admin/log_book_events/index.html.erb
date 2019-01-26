@@ -9,7 +9,7 @@
         <th class="span1">Historian</th>
         <th class="span1">Historizable</th>
         <th class="span2">Tags</th>
-        <th class="span5">Text</th>
+        <th class="span5">Differences</th>
       </tr>
     </thead>
 
@@ -31,7 +31,7 @@
             <% end %>
           </td>
           <td><%= render_labels log_book_event.tag_list, :tags %></td>
-          <td><%= log_book_event.text.to_md %></td>
+          <td><%= log_book_event.differences.to_json %></td>
         </tr>
       <% end %>
     </tbody>

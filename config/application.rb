@@ -20,7 +20,7 @@ module RubioDeMarzo
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.active_support.escape_html_entities_in_json = true
-    config.active_record.whitelist_attributes = true
+    config.active_record.whitelist_attributes = false
 
     config.time_zone = "UTC"
     config.active_record.default_timezone = :utc

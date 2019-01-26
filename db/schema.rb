@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130324122029) do
+ActiveRecord::Schema.define(:version => 20190126114611) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "name",              :null => false
@@ -54,10 +54,12 @@ ActiveRecord::Schema.define(:version => 20130324122029) do
     t.string   "historian_type"
     t.integer  "historizable_id"
     t.string   "historizable_type"
-    t.string   "text",              :null => false
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.text     "differences",       :limit => 16777215
   end
+
+  add_index "log_book_events", ["historizable_id", "historizable_type"], :name => "index_log_book_events_on_historizable_id_and_historizable_type"
 
   create_table "pics", :force => true do |t|
     t.integer  "item_id",             :null => false

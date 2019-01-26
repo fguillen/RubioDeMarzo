@@ -22,6 +22,6 @@ FactoryGirl.define do
   end
 
   factory :log_book_event, :class => LogBook::Event  do
-    text "Wadus Event"
+    differences "Wadus Event"
   end
 end
