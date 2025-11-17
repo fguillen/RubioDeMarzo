@@ -9,6 +9,7 @@ services:
       - 127.0.0.1:3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
+
   app:
     build:
       context: .
@@ -20,6 +21,7 @@ services:
       - db
     env_file:
       - .env.production
+
   web:
     build:
       context: .
@@ -31,7 +33,10 @@ services:
       - 443:443
     volumes:
       - .:/var/www/app
+      - ./certbot/etc:/etc/letsencrypt
+      - ./certbot/lib:/var/lib/letsencrypt
     restart: always
+
   cron:
     build:
       context: .

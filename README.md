@@ -35,3 +35,10 @@ Go to S3 to get the backups
 
     docker-compose exec app bundle exec rails c
     docker-compose exec db mysql -uroot -p hpq
+
+### Let's encrypt cerets
+
+```
+mkdir -p certbot/etc certbot/lib
+docker-compose exec web certbot --nginx
+```

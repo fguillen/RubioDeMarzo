@@ -25,3 +25,5 @@ public/assets/uploads/
 .env.production
 .env.development.local
 .env.*.local
+/certbot
+!certbot/.gitkeep
